@@ -24,7 +24,11 @@ function fetch_address(zipcode) {
 function draw_result(data) {
     result_div = document.getElementById("result");
 
-    if (data.address == '-1'){
+    while (result_div.firstChild) {
+        result_div.removeChild(result_div.firstChild);
+    }
+
+    if (data.address == '-1') {
         alert("error");
         return;
     }
