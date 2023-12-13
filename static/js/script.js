@@ -36,4 +36,12 @@ function draw_result(data) {
     address_div = document.createElement("div");
     address_div.innerHTML = 'address: ' + data.address;
     result_div.appendChild(address_div);
+
+    map_div = document.createElement("div");
+    map_div.innerHTML = '<a href="' + url_for_map(data) + '" target="_blank">map</a>';
+    result_div.appendChild(map_div);
+}
+
+function url_for_map(data) {
+    return 'https://www.google.com/maps/search/?api=1&query=' + data.address;
 }

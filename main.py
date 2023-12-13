@@ -19,7 +19,7 @@ def result():
     
     url = 'https://api.zipaddress.net/'
     params = {'zipcode': zipcode}
-    response = requests.get(url, params=params)
+    response = requests.get(url, params=params) # APIにリクエストを送る(GET)
     code = response.json()['code']
     if code == 200:
         fullAddress = response.json()['data']['fullAddress']
